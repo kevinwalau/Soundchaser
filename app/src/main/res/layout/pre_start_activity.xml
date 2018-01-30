@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.08"
+        android:id="@+id/space" />
+
+    <TextView
+        android:layout_width="168dp"
+        android:layout_height="72dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Distance to run (km):"
+        android:id="@+id/textView2"
+        android:textSize="28dp"
+        android:layout_weight="0.01"
+        android:layout_below="@+id/space"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="169dp"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Radius to stay within (km):"
+        android:id="@+id/textView3"
+        android:textSize="28dp"
+        android:layout_below="@+id/textView2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:paddingTop="10dp" />
+
+    <Button
+        android:layout_width="179dp"
+        android:layout_height="wrap_content"
+        android:text="@string/startActivity2"
+        android:id="@+id/startButton"
+        android:clickable="true"
+        android:nestedScrollingEnabled="true"
+        android:onClick="startActivity"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.10"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="77dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/distance"
+        android:text="@string/distance"
+        android:textSize="30dp"
+        android:layout_alignTop="@+id/textView2"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toRightOf="@+id/startButton"
+        android:layout_toEndOf="@+id/startButton"
+        android:editable="true"
+        android:clickable="false"
+        android:onClick="editDistance"
+        android:imeOptions= "actionNext"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/radius"
+        android:text="@string/radius"
+        android:textSize="30dp"
+        android:layout_alignTop="@+id/textView3"
+        android:layout_toEndOf="@+id/startButton"
+        android:layout_toRightOf="@+id/startButton"
+        android:clickable="false"
+        android:editable="true"
+        android:onClick="editRadius"
+        android:imeOptions= "actionDone"
+        android:paddingTop="10dp" />
+
+    <Spinner
+        android:id="@+id/activitySpinner"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:prompt="@string/activitySpin"
+        android:paddingTop="10dp"
+        android:layout_below="@+id/textView3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Custom Destination"
+        android:id="@+id/customDestination"
+        android:checked="false"
+        android:textSize="28dp"
+        android:paddingTop="10dp"
+        android:layout_above="@+id/startButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="71dp" />
+
+</RelativeLayout>

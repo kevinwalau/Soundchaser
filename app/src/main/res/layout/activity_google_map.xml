@@ -1,0 +1,154 @@
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+<fragment xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/map"
+    tools:context=".MapsActivity"
+    android:name="com.google.android.gms.maps.SupportMapFragment" />
+
+
+<Button
+    android:id="@+id/addressButton"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/addressTextButton"
+    android:layout_alignParentRight="true"
+    android:clickable="true"
+    android:visibility="invisible"
+    android:onClick="handleAddress" />
+
+<EditText
+    android:id="@+id/addressText"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:inputType="text"
+    android:hint="@string/addressText"
+    android:layout_toLeftOf="@id/addressButton"
+    android:editable="true"
+    android:visibility="invisible"
+    android:textSize="20dp"
+    android:imeOptions= "actionDone"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Confirm and Generate"
+        android:id="@+id/confrimButton"
+        android:layout_below="@+id/addressButton"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone"
+        android:onClick="generateRandomPath" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:visibility="visible">
+
+        <Chronometer
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/timer"
+            android:height="70dp"
+            android:textSize="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="1"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:visibility="gone"
+            android:alpha="0.75" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="REGENERATE PATH"
+            android:id="@+id/regenerateButton"
+            android:clickable="true"
+            android:onClick="regeneratePath"
+            android:textSize="20dp"
+            android:visibility="gone"
+            android:alpha="0.75"
+            android:layout_marginRight="100dp"
+            android:layout_marginEnd="42dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="START"
+            android:id="@+id/startWorkoutButton"
+            android:clickable="true"
+            android:onClick="startWorkout"
+            android:textSize="30dp"
+            android:visibility="gone"
+            android:alpha="0.75"
+            android:layout_marginRight="100dp"
+            android:layout_marginEnd="42dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight ="true"/>
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="END"
+            android:id="@+id/endWorkoutButton"
+            android:clickable="true"
+            android:onClick="endWorkout"
+            android:textSize="30dp"
+            android:visibility="gone"
+            android:alpha="0.75"
+            android:layout_marginRight="42dp"
+            android:layout_marginEnd="42dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/timeRanText"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:alpha="0.75"
+                android:textSize="40dp"
+                android:layout_alignRight="@+id/distanceRanText"
+                android:layout_alignEnd="@+id/distanceRanText"
+                android:visibility="gone" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/distanceRanText"
+                android:layout_below="@+id/timeRanText"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:alpha="0.75"
+                android:textSize="40dp"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>
